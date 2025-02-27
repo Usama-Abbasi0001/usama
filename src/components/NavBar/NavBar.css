@@ -1,0 +1,185 @@
+#OfCanva{
+    background-color: #010314;
+}
+#User:hover{
+    background-color: #44A08D;
+    color: white;
+}
+#Menu{
+    background-color: #44A08D;
+}
+#sign{
+    background-color: #44A08D; 
+}
+#sign:hover{
+    background-color: #096a57;
+}
+#Menu:hover{
+    background-color: white;
+}
+#Rigerter{
+    color: #44A08D;
+}
+#Home {
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid black; /* Adjust as needed */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    /* Background Gradient with Image */
+    background: linear-gradient(to bottom, transparent, #44A08D), 
+                url('../images/bannerbg.png'); 
+    
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition */
+}
+#Scale2 {
+    background: linear-gradient(to right, #000000,  #44A08D); /* Adjust colors as needed */
+    color: white; /* Ensures text is visible */
+    border-radius: 40px;
+  }
+  
+#Scale{
+    background-color:#1C1D34;
+}
+#Rigerte1{
+    background-color: #44A08D;
+    border-radius: 40px;
+    height: 15px;
+    width: 15px;
+}
+#Rigerte2{
+    background-color: #44A08D;
+    border-radius: 40px;
+    height: 15px;
+    width: 15px;
+}
+  
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  #min{
+    background-color: red;
+  }
+  
+#Banner{
+    background-color: #44a08d43;
+}
+ #BannerBg {
+    margin-top: 10rem;
+    border-top-left-radius:20px ;
+    border-top-right-radius: 20px;
+    padding: 10px;
+    border: 1px solid black; /* Adjust as needed */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    /* Background Gradient with Image */
+    background: linear-gradient(to top, transparent, #44A08D), 
+                url('../images/bannerbg.png'); 
+    
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition */
+    }
+    .hover-up:hover {
+        transform: translateY(-5px); /* Moves the card up slightly */
+        transition: transform 0.3s ease-in-out;
+      }
+#symbol:hover{
+    background: linear-gradient(to right,#44A08D, #44a08d53); /* Adjust colors as needed */
+}      
+#green{
+    background-color:  #44A08D;
+}
+#green1{
+    background-color: #136F84;
+}
+#green2{
+    background-color:#0B446D;
+}
+#green3{
+    background-color:#033356;
+}
+#green4{
+    background-color:#012641;
+}
+#green5{
+    background-color:#191F28;
+}
+
+.contact{
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid black; /* Adjust as needed */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    /* Background Gradient with Image */
+    background: linear-gradient(to bottom, transparent, #44A08D), 
+                url('../images/bannerbg.png'); 
+    
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition */
+      }
+
+      .custom-scrollbar {
+        overflow-y: auto;
+        scrollbar-width: thin; /* For Firefox */
+        scrollbar-color: rgba(1, 78, 20, 0.482) rgb(7, 10, 40); /* Thumb and track colors */
+      }
+      
+      /* Chrome & Edge */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 10px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: gray;
+      }
+      #Arrow{
+        background: linear-gradient(to bottom,#44A08D, #44a08d53); 
+      }
+      #MobileBG{
+        background-color: #0f101E;
+        border-radius: 20px;
+      }
+      #MobileBG:hover{
+        background-color: #0f101e96;
+      }
+      #footer{
+        margin: 0 auto;
+        padding-left: 1rem;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding-right: 1rem;
+        border: 1px solid black; /* Adjust as needed */
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background: linear-gradient(to top, transparent, #44A08D), 
+                    url('../images/footerbg.png'); 
+        background-size: cover; /* Ensure the image covers the entire area */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent repetition */
+      }
+      
