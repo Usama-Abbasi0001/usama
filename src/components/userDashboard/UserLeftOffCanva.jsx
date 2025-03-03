@@ -1,45 +1,60 @@
-import React from 'react';
-import { useState } from 'react';
-import { Cross, Offcanvas } from '../Utils/Icons';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Cross,  Dash,  Offcanvas } from "../Utils/Icons";
+import logo from '../../components/images/logo.svg'
+const UserLeftOffCanva = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-function UserLeftOffCanva() {
-    const [isOpen, setIsOpen] = useState(false);
+  const toggleCanvas = () => setIsOpen(!isOpen);
 
-    const toggleMenu = () => setIsOpen(!isOpen);
-    
   return (
-    <>
-  <div>
-    <button 
-      onClick={toggleMenu} 
-      className=" py-2"
-    >
-    <Offcanvas/>
-    </button>
+    <div>
+      {/* Open Button */}
+      <button
+        onClick={toggleCanvas}>
+      <Offcanvas/>
+      </button>
 
-    <div className={`fixed inset-y-0 left-0 w-64 bg-gray-800 text-white p-5 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>        
-      <div className="flex justify-between items-center">
-        <h2 className="text-xl font-bold">Menu</h2>
-        <button onClick={toggleMenu}>
-          <Cross className="w-6 h-6" />
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={toggleCanvas}
+        ></div>
+      )}
+
+      {/* OffCanvas Menu */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: isOpen ? "0%" : "-100%" }}
+        transition={{ duration: 0.3 }}
+        className="fixed top-0 left-0 w-64 h-full bg-black shadow-lg border z-50 py-6 px-4"
+      >
+        {/* Close Button */}
+        <button onClick={toggleCanvas} className=" flex justify-between w-full items-center">
+         <div><img src={logo} alt="" className="w-[140px]"/></div> 
+          <Cross />
         </button>
-      </div>
-      <nav className="mt-4">
-        <a href="#" className="block py-2 px-3 hover:bg-blue-600 rounded-lg">Home</a>
-        <a href="#" className="block py-2 px-3 hover:bg-blue-600 rounded-lg">About</a>
-        <a href="#" className="block py-2 px-3 hover:bg-blue-600 rounded-lg">Contact</a>
-      </nav>
-    </div>
 
-    {isOpen && (
-      <div 
-        className="fixed inset-0 bg-black bg-opacity-50" 
-        onClick={toggleMenu}
-      ></div>
-    )}
-  </div>
-    </>
-  )
-}
+        {/* Navigation Links */}
+        <nav className="mt-10 space-y-4">
+          <a href="#" className="flex items-center space-x-3 text-lg text-white hover:text-blue-500">
+            <Dash/>
+            <p>Dashboard</p>
+          </a>
+          <a href="#" className="block text-lg text-white hover:text-blue-500">
+            About
+          </a>
+          <a href="#" className="block text-lg text-white hover:text-blue-500">
+            Services
+          </a>
+          <a href="#" className="block text-lg text-white hover:text-blue-500">
+            Contact
+          </a>
+        </nav>
+      </motion.div>
+    </div>
+  );
+};
 
 export default UserLeftOffCanva;
