@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Cross,  Dash,  Offcanvas } from "../Utils/Icons";
+import { Account, Copy, Cross,  Dash,  Deposit,  Email,  Kyc,  Live,  LiveChats,  LogOut,  Offcanvas, Quotes, Stock, Transaction, Withdrawal } from "../Utils/Icons";
 import logo from '../../components/images/logo.svg';
 import logopic from '../../components/images/my.jpg';
+import { SlCalender } from "react-icons/sl";
+import { Link, useNavigate } from "react-router-dom";
 const UserLeftOffCanva = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleCanvas = () => setIsOpen(!isOpen);
+  const navigate = useNavigate();
+  function logout(){
+    navigate('/login')
+  }
 
   return (
     <div>
       {/* Open Button */}
       <button
         onClick={toggleCanvas}>
-      <Offcanvas/>
+          <Offcanvas/>
       </button>
 
       {/* Overlay */}
@@ -26,11 +31,12 @@ const UserLeftOffCanva = () => {
 
       {/* OffCanvas Menu */}
       <motion.div
-        initial={{ x: "-100%" }}
-        animate={{ x: isOpen ? "0%" : "-100%" }}
-        transition={{ duration: 0.3 }}
-        className="fixed top-0 left-0 w-64 h-full bg-black shadow-lg border z-50 py-6 px-4"
-      >
+  initial={{ x: "-100%" }}
+  animate={{ x: isOpen ? "0%" : "-100%" }}
+  transition={{ duration: 0.3 }}
+  className="fixed top-0 left-0 w-64 h-screen overflow-y-auto bg-black shadow-lg z-50 py-6 px-4"
+>
+
         {/* Close Button */}
         <button onClick={toggleCanvas} className=" flex justify-between w-full items-center">
          <div><img src={logo} alt="" className="w-[140px]"/></div> 
@@ -38,7 +44,7 @@ const UserLeftOffCanva = () => {
         </button>
 
         {/* Navigation Links */}
-        <nav className="mt-10 space-y-4">
+        <nav className="mt-10 space-y-3 w-58">
         <div className="bg-gray-600 p-2 rounded-[6px]">
           <div className="flex space-x-2 items-center">
           <div><img src={logopic} alt="" className="w-[50px] rounded-[50%]" /></div>
@@ -60,19 +66,85 @@ const UserLeftOffCanva = () => {
             <p className="text-[12px]">Basic</p>
           </div>
         </div>
-          <a href="#" className="flex items-center space-x-3 text-lg text-white hover:text-blue-500">
-            <Dash/>
-            <p>Dashboard</p>
-          </a>
-          <a href="#" className="block text-lg text-white hover:text-blue-500">
-            About
-          </a>
-          <a href="#" className="block text-lg text-white hover:text-blue-500">
-            Services
-          </a>
-          <a href="#" className="block text-lg text-white hover:text-blue-500">
-            Contact
-          </a>
+          <Link to="/user"
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Dash />
+          <p>Dashboard</p>
+         </Link>
+         <Link to="/kycverification"
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded">
+             <Kyc />
+            <p>Submit KYC</p>
+           </Link>
+
+         <Link to='/copy-experts'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Copy/>
+          <p>Copy Experts</p>
+         </Link>
+         <Link to='/deposit-page'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Deposit/>
+          <p>Deposit</p>
+         </Link>
+         <Link to='/withrawal'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Withdrawal/>
+          <p>Withdrawal</p>
+         </Link>
+         <Link to='/account-upgrate'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Account/>
+          <p>Account Upgrate</p>
+         </Link>
+         <Link to='/live-trading'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Live/>
+          <p>Live Trading</p>
+         </Link>
+         <Link to='/live-quote'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Quotes/>
+          <p>Live Quotes</p>
+         </Link>
+         <Link to='/live-chat'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <LiveChats/>
+          <p>Live Chat</p>
+         </Link>
+         <Link to='/calender'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <SlCalender/>
+          <p>Calender</p>
+         </Link>
+         <Link to='/transaction'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Transaction/>
+          <p>Transactions</p>
+         </Link>
+         <Link to='/emailus'
+           className="flex items-center space-x-3 text-[18px] text-white hover:bg-[#44a08d] hover:text-white transition duration-300 p-2 rounded"
+          >
+          <Email/>
+          <p>Email Us</p>
+         </Link>
+         <a href="#"
+           className="flex items-center space-x-3 text-[18px] text-red-600 hover:bg-[#3ab0995f] hover:text-white transition duration-300 p-2 rounded"
+           onClick={logout}
+          >
+          <LogOut/>
+          <p>Logout</p>
+         </a>
         </nav>
       </motion.div>
     </div>
