@@ -28,8 +28,8 @@ function App() {
       <Route path='/User' element={<UserDashboardP/>}/>
       <Route path='/kycverification' element={<Kycverification/>}/>
       <Route path='/copy-experts' element={<CopyExperts/>}/>
-      <Route path='/deposit-page' element={<DepositPage/>}/>
-      <Route path='/withrawal' element={<Withdrawalpage/>}/>
+      <Route path='/deposit-page' element={<DepositPage heading='Deposit'/>}/>
+      <Route path='/withrawal' element={<Withdrawalpage />}/>
       <Route path='/account-upgrate' element={<AccountUpgrate/>}/>
       <Route path='/live-trading' element={<LiveTrading/>}/>
       <Route path='/live-quote' element={<LIveQuote/>}/>

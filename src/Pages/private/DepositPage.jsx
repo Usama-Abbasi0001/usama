@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {Logo,  UserDashboard } from '../../components/Utils/Icons'
+import UserLeftOffCanva from '../../components/userDashboard/UserLeftOffCanva';
 
 const depositOptions = [
   {
@@ -33,17 +36,31 @@ const depositOptions = [
   },
 ];
 
-const DepositPage = () => {
+const DepositPage = (props) => {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+  function login(){
+    navigate("/login")
+  }
 
   const filteredOptions = depositOptions.filter((option) =>
     option.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
+    <>
+    <div className='w-full flex justify-between items-center bg-gray-800 p-3'>
+      <div className='flex space-x-4 items-center'>
+        <UserLeftOffCanva/>
+        <Logo/>
+      </div>
+      <div className='' onClick={login}>
+        <UserDashboard/>
+      </div>
+    </div>
     <div className="min-h-screen bg-black text-white px-4 py-6 sm:px-6 lg:px-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-2">Deposit</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold mb-2">{props.heading}</h1>
         <p className="text-gray-400 mb-6 text-sm sm:text-base">Choose method of payment</p>
 
         <div className="mb-6">
@@ -81,6 +98,8 @@ const DepositPage = () => {
         </div>
       </div>
     </div>
+    
+    </>
   );
 };
 

@@ -1,9 +1,10 @@
 import React from 'react'
+import DepositPage from './DepositPage';
 
 function Withdrawalpage() {
   return (
     <div>
-      this page is Withdrawal processing
+      <DepositPage heading='Withdrawal'/>
     </div>
   )
 }

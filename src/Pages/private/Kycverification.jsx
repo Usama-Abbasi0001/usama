@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import UserLeftOffCanva from '../../components/userDashboard/UserLeftOffCanva';
+import { Logo, UserDashboard } from '../../components/Utils/Icons';
+import { useNavigate } from 'react-router-dom';
 
 const KycVerification = () => {
   const [photo, setPhoto] = useState(null);
@@ -8,6 +11,10 @@ const KycVerification = () => {
   const handleFileChange = (setter) => (e) => {
     setter(e.target.files[0]);
   };
+  const navigate = useNavigate();
+  function login(){
+    navigate("/login")
+  }
 
   const handleSubmit = () => {
     // Submit logic here
@@ -15,6 +22,16 @@ const KycVerification = () => {
   };
 
   return (
+    <>
+     <div className='w-full flex justify-between items-center bg-gray-800 p-3'>
+      <div className='flex space-x-4 items-center'>
+        <UserLeftOffCanva/>
+        <Logo/>
+      </div>
+      <div className='' onClick={login}>
+        <UserDashboard/>
+      </div>
+    </div>
     <div className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-lg bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">KYC Verification</h2>
@@ -79,6 +96,7 @@ const KycVerification = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
