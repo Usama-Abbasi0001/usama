@@ -19,9 +19,19 @@ function AccountUpgrate() {
         <UserDashboard/>
       </div>
     </div>
-    <div>
-      this page is account Upgrate
-    </div>
+    <div className="w-full max-w-[600px] flex flex-col mt-10 mx-auto px-4">
+  <div className="flex justify-start flex-col">
+    <p className="text-2xl md:text-[30px] font-bold opacity-70" style={{color:'#00800'}}>Subscribe</p>
+    <p className="opacity-80">Select Plans</p>
+  </div>
+  <div className="text-center flex items-center justify-center flex-col ">
+    <p className="opacity-40 w-full md:w-[500px] mt-5">
+      Your account has not been fully activated yet, which is why no subscription plans are currently available. We kindly recommend that you reach out to our support team for assistance. They will be able to verify your account status and help resolve any issues you may be encountering.
+    </p>
+    <p className="opacity-40 mt-5">Thank you for your understanding and cooperation.</p>
+  </div>
+</div>
+
     </>
   )
 }
